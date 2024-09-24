@@ -22,7 +22,7 @@ As classes Ventilador, Umidificador, Desumidificador, e Lampada devem herdar de 
 O método atualizarSensores da classe Sala deve iterar sobre os sensores e realizar as atualizações necessárias.
 O método atualizarAtuadores da classe Sala deve iterar sobre os atuadores e realizar as atualizações necessárias.
 
--Função main:
+- Função main:
 Instancie um conjunto de salas (no mínimo 3), faça a configuração dos sensores e atuadores de uma forma que cada sala tenha uma configuração um pouco diferente. Crie um laço de repetição que execute 1440 vezes fazendo a atualização das leituras dos sensores e ativação dos atuadores, conforme a lógica que você implementou para cada sala.
 Dentro da função main, gere saídas de texto exibindo os valores lidos dos sensores e enviados aos atuadores de forma a facilitar o que está acontecendo na aplicação e também de encontrar possíveis problemas na execução do código.
 
