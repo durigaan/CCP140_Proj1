@@ -3,11 +3,10 @@ PROJETO 1 - CCP140
 
 Você foi contratado para desenvolver um sistema de automação para ambientes que consiste em gerenciar diferentes tipos de sensores e atuadores. O sistema precisa ser capaz de atualizar os sensores e atuadores com base em suas funcionalidades específicas.
 
-- Objetivo
+- Objetivo:
 Implemente um sistema orientado a objetos que modela a estrutura de classes descrita no diagrama em anexo. O sistema deve representar a relação entre salas, sensores e atuadores, e permitir a interação entre esses componentes.
 
-- Requisitos
-Classes e Herança:
+- Requisitos Classes e Herança:
 Implemente a classe Sala com métodos para atualizar sensores e atuadores.
 Implemente a classe Componente com propriedades e métodos para controlar o estado dos componentes.
 Implemente a classe Sensor e suas subclasses (Temperatura, Luminosidade, e Umidade), com métodos específicos para cada tipo de sensor. Os valores lidos pelos sensores devem ser gerados de forma aleatória dentro de um intervalo consistente com o tipo de sensor.
