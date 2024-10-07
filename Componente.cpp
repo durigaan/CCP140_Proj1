@@ -1,73 +1,89 @@
+#ifndef COMPONENTE_CPP
+#define COMPONENTE_CPP
+
 #include <iostream>
-#include <vector>
+#include <string>
 #include <cstdlib>
-#include <ctime>
+#include <vector>
 using namespace std;
 
-class Componente {
-public:
-    virtual void atualizar() = 0;
-};
-
-class Sensor : public Componente {
-protected:
+class Sensor {
+private:
+    string nome;
     float valor;
+
 public:
-    float getValor() const { return valor; }
+    Sensor(const string& nome) : nome(nome), valor(0.0) {}
+
+    void atualizar() {
+        valor = static_cast<float>(rand() % 100); // Valor aleatório entre 0 e 99
+    }
+
+    string getNome() const {
+        return nome;
+    }
+
+    float getValor() const {
+        return valor;
+    }
 };
 
+class Atuador {
+private:
+    string nome;
+    bool estado;
+
+public:
+    Atuador(const string& nome) : nome(nome), estado(false) {}
+
+    void atualizar() {
+        estado = !estado; // Alterna o estado
+    }
+
+    string getNome() const {
+        return nome;
+    }
+
+    bool getEstado() const {
+        return estado;
+    }
+};
+
+// Classes de sensores
 class Temperatura : public Sensor {
 public:
-    void atualizar() override {
-        valor = (rand() % 351) / 10.0; // Valores entre 0.0 e 35.0
-    }
+    Temperatura() : Sensor("Temperatura") {}
 };
 
 class Luminosidade : public Sensor {
 public:
-    void atualizar() override {
-        valor = rand() % 1001; // Valores entre 0 e 1000
-    }
+    Luminosidade() : Sensor("Luminosidade") {}
 };
 
 class Umidade : public Sensor {
 public:
-    void atualizar() override {
-        valor = rand() % 101; // Valores entre 0 e 100
-    }
+    Umidade() : Sensor("Umidade") {}
 };
 
-class Atuador : public Componente {
-protected:
-    bool estado;
-public:
-    bool getEstado() const { return estado; }
-};
-
+// Classes de atuadores
 class Ventilador : public Atuador {
 public:
-    void atualizar() override {
-        estado = rand() % 2; // Liga ou desliga
-    }
-};
-
-class Umidificador : public Atuador {
-public:
-    void atualizar() override {
-        estado = rand() % 2; // Liga ou desliga
-    }
-};
-
-class Desumidificador : public Atuador {
-public:
-    void atualizar() override {
-        estado = rand() % 2; // Liga ou desliga
-    }
+    Ventilador() : Atuador("Ventilador") {}
 };
 
 class Lampada : public Atuador {
 public:
-    void atualizar() override {
-        estado = rand() % 2; // Liga ou desliga
-    }
+    Lampada() : Atuador("Lampada") {}
 };
+
+class Umidificador : public Atuador {
+public:
+    Umidificador() : Atuador("Umidificador") {}
+};
+
+class Desumidificador : public Atuador {
+public:
+    Desumidificador() : Atuador("Desumidificador") {}
+};
+
+#endif // COMPONENTE_CPP

@@ -1,8 +1,9 @@
 #include <iostream>
-#include <vector>
 #include <cstdlib>
 #include <ctime>
-#include "Sala.cpp"
+#include "Componente.cpp" // Incluindo Componente.cpp
+#include "Sala.cpp" // Incluindo Sala.cpp
+
 using namespace std;
 
 int main() {
