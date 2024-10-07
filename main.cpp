@@ -35,14 +35,17 @@ int main() {
 
         sala1.atualizarSensores();
         sala1.atualizarAtuadores();
+        cout << "Sala 1" << endl; // Identificando a sala
         sala1.exibirStatus();
 
         sala2.atualizarSensores();
         sala2.atualizarAtuadores();
+        cout << "Sala 2" << endl; // Identificando a sala
         sala2.exibirStatus();
 
         sala3.atualizarSensores();
         sala3.atualizarAtuadores();
+        cout << "Sala 3" << endl; // Identificando a sala
         sala3.exibirStatus();
 
         cout << "-----------------------------" << endl;
